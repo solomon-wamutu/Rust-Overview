@@ -74,15 +74,24 @@ let mut input  = String::new();
 io::stdin().read_line(&mut input).expect("msg");
 let int_input: i64 = input.trim().parse().unwrap();
 if int_input == 1{
-    println!("first two letters");
+    println!("first number");
 }
 else if int_input == 2{
-    println!("second two letters");
+    println!("second number");
 }
 else if int_input == 3 {
-    println!("third two letters");
+    println!("third number");
 } else{
-    println!("Any other letter");
+    println!("Any other number");
+    if int_input <= 9{
+        let z:i32 = (9 as i64 - int_input).try_into().unwrap();
+        println!("{} is less than 9 by {}", int_input, z);
+    } 
+    else {
+        let z:i32 = (int_input - 9 as i64 ).try_into().unwrap();
+        println!("{} is greater than 9 by {}", int_input, z);
+    }
+
 }
 
 }
